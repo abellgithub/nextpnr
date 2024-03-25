@@ -141,7 +141,7 @@ struct ExampleArch : HimbaechelArch
 {
     ExampleArch() : HimbaechelArch("example"){};
     bool match_device(const std::string &device) override { return device == "EXAMPLE"; }
-    std::unique_ptr<HimbaechelAPI> create(const std::string &device, const dict<std::string, std::string> &args)
+    std::unique_ptr<HimbaechelAPI> create(const std::string &device, const dict<std::string, std::string> &args) override
     {
         return std::make_unique<ExampleImpl>();
     }
